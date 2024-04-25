@@ -13,7 +13,8 @@ public class MainTeste {
         SetRepository setRepo = new SetRepository();
         CardRepository cardRepo = new CardRepository();
 
-        System.out.println(setRepo.findById(1));
-//        cardRepo.readAll();
+//        setRepo.create(set);
+        cardRepo.create(card);
+
     }
 }

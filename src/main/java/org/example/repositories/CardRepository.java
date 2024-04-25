@@ -58,8 +58,8 @@ public class CardRepository extends _BaseRepository implements _Logger<Card>{
                                                 TB_COLUMNS2.get("SET_ID"),
                                                 SetRepository.TB_NAME,
                                                 SetRepository.TB_COLUMNS.get("ID")))) {
-                    stmt.executeUpdate();
                     logInfo("Tabela " + TB_NAME + " criada com sucesso");
+                    stmt.executeUpdate();
                 } catch (SQLException e) {
                     logError("Erro ao criar a tabela " + TB_NAME + ": ");
                     e.printStackTrace();
@@ -150,8 +150,8 @@ public class CardRepository extends _BaseRepository implements _Logger<Card>{
             stmt.setInt(9, card.getHealth());
             stmt.setInt(10, card.getCost());
             stmt.setInt(11, card.getSetId());
-            stmt.executeUpdate();
             logInfo("Card criado com sucesso!");
+            stmt.executeUpdate();
         } catch (SQLException e) {
             logError("Erro ao adicionar ao Banco de Dados: ");
             e.printStackTrace();

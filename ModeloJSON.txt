@@ -1,0 +1,23 @@
+{
+        "id": 1,
+        "name": "teste",
+        "patch": "teste",
+        "releaseDate": "teste",
+        "size": 5
+    }
+
+
+{
+        "id": 1,
+        "cost": 5,
+        "description": "teste",
+        "flavor": "teste",
+        "health": 10,
+        "levelUp": "teste",
+        "name": "teste",
+        "power": 10,
+        "rarity": "teste",
+        "region": "teste",
+        "setId": 1,
+        "type": "teste"
+    }

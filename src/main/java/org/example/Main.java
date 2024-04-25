@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.repositories.CardRepository;
+import org.example.repositories.SetRepository;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;

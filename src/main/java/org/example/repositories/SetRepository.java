@@ -1,5 +1,6 @@
 package org.example.repositories;
 
+import org.apache.logging.log4j.LogManager;
 import org.example.entities.Set;
 
 import java.util.ArrayList;
@@ -8,7 +9,9 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.Optional;
 
-public class SetRepository extends _BaseRepository implements _Logger<Set>{
+public class SetRepository extends _BaseRepository implements _Logger<SetRepository>{
+
+
     public static final String TB_NAME = "SET_CARDS";
 
     public static final Map<String, String> TB_COLUMNS = Map.of(
@@ -21,6 +24,7 @@ public class SetRepository extends _BaseRepository implements _Logger<Set>{
 
     public SetRepository(){
         Initialize();
+
     }
 
     public void Initialize() {
@@ -35,8 +39,8 @@ public class SetRepository extends _BaseRepository implements _Logger<Set>{
                                 "%s VARCHAR2(20) NOT NULL,".formatted(TB_COLUMNS.get("SET_PATCH")) +
                                 "%s VARCHAR2(20) NOT NULL,".formatted(TB_COLUMNS.get("RELEASEDATE")) +
                                 "%s NUMBER(3) NOT NULL)".formatted(TB_COLUMNS.get("SET_SIZE")))) {
-                    stmt.executeUpdate();
                     logInfo("Tabela " + TB_NAME + " criada com sucesso");
+                    stmt.executeUpdate();
                 } catch (SQLException e) {
                     logError("Erro ao criar a tabela " + TB_NAME + ": ");
                     e.printStackTrace();
@@ -99,8 +103,8 @@ public class SetRepository extends _BaseRepository implements _Logger<Set>{
             stmt.setString(2, set.getPatch());
             stmt.setString(3, set.getReleaseDate());
             stmt.setInt(4, set.getSize());
-            stmt.executeUpdate();
             logInfo("Set criado com sucesso!");
+            stmt.executeUpdate();
         } catch (SQLException e) {
             logError("Erro ao adicionar ao Banco de Dados: ");
             e.printStackTrace();
